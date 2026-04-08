@@ -1,0 +1,17 @@
+$primary-color: #6C63FF;
+$secondary-color: #4A44C6;
+$accent-color: #FF6584;
+$dark-color: #121212;
+$dark-gray: #1E1E1E;
+$light-color: #F5F5F7;
+$text-color: #E0E0E0;
+$text-muted: #A0A0A0;
+
+$gradient-primary: linear-gradient(135deg, $primary-color, $secondary-color);
+$gradient-accent: linear-gradient(135deg, $accent-color, #FF9A3C);
+
+$shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+$shadow-hover: 0 20px 40px rgba(108, 99, 255, 0.2);
+
+$border-radius: 12px;
+$transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
