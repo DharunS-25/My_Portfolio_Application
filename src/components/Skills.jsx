@@ -3,16 +3,20 @@ import { motion } from 'framer-motion';
 import { 
   FaPython, FaJava, FaJs, FaDatabase, 
   FaReact, FaAws, FaGitAlt, FaChartBar,
-  FaNodeJs, FaMicrosoft
+  FaNodeJs, FaMicrosoft, FaChartLine
 } from 'react-icons/fa';
+
 import { 
   SiPandas, SiNumpy, SiScikitlearn, 
-  SiMongodb, SiMysql, SiTableau,
+  SiMongodb, SiMysql,
   SiC, SiExpress
 } from 'react-icons/si';
+
 import { GiArtificialIntelligence } from 'react-icons/gi';
 import { BsBarChartFill } from 'react-icons/bs';
+
 import '../styles/App.scss';
+
 const Skills = () => {
   const skillCategories = [
     {
@@ -52,18 +56,17 @@ const Skills = () => {
         { name: 'AWS', icon: <FaAws />, level: 'Intermediate', color: '#FF9900' },
         { name: 'Azure', icon: <FaMicrosoft />, level: 'Basic', color: '#0089D6' },
         { name: 'Git', icon: <FaGitAlt />, level: 'Advanced', color: '#F05032' },
-        { name: 'Tableau', icon: <SiTableau />, level: 'Intermediate', color: '#E97627' },
+        { name: 'Tableau', icon: <FaChartLine />, level: 'Intermediate', color: '#E97627' },
         { name: 'Power BI', icon: <FaChartBar />, level: 'Intermediate', color: '#F2C811' },
       ]
     }
   ];
 
-  // Get level color
   const getLevelColor = (level) => {
     switch(level) {
-      case 'Basic': return '#FF6B6B'; // Red
-      case 'Intermediate': return '#FFD166'; // Yellow
-      case 'Advanced': return '#06D6A0'; // Green
+      case 'Basic': return '#FF6B6B';
+      case 'Intermediate': return '#FFD166';
+      case 'Advanced': return '#06D6A0';
       default: return '#6C63FF';
     }
   };
@@ -144,7 +147,7 @@ const Skills = () => {
               'AWS Cloud Foundations - AWS Academy',
               'Excel - Simplilearn',
               'Data Science - IBM',
-              'Python - GreeksforGreeks',
+              'Python - GeeksforGeeks',
               'Machine Learning Techniques - Coursera'
             ].map((cert, index) => (
               <motion.div
