@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiGithub, FiLinkedin, FiMail, FiPhone, FiDownload } from 'react-icons/fi';
+import { FiDownload } from 'react-icons/fi';
 import { FaPython, FaReact, FaDatabase } from 'react-icons/fa';
 import '../styles/App.scss';
 
@@ -20,23 +20,79 @@ const Hero = () => {
   }, []);
 
   const socialLinks = [
-    { icon: <FiGithub />, href: 'https://github.com/DharunS-25', label: 'GitHub' },
-    { icon: <FiLinkedin />, href: 'https://linkedin.com/in/dharunrss10031725', label: 'LinkedIn' },
-    { icon: <FiMail />, href: 'mailto:dharuns2508@gmail.com', label: 'Email' },
-    { icon: <FiPhone />, href: 'tel:+917845948395', label: 'Phone' },
+    {
+      icon: (
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+          alt="GitHub"
+          width="24"
+          height="24"
+        />
+      ),
+      href: 'https://github.com/DharunS-25',
+      label: 'GitHub',
+    },
+    {
+      icon: (
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+          alt="LinkedIn"
+          width="24"
+          height="24"
+        />
+      ),
+      href: 'https://linkedin.com/in/dharunrss10031725',
+      label: 'LinkedIn',
+    },
+    {
+      icon: (
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
+          alt="Email"
+          width="24"
+          height="24"
+        />
+      ),
+      href: 'mailto:dharuns2508@gmail.com',
+      label: 'Email',
+    },
+    {
+      icon: (
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/597/597177.png"
+          alt="Phone"
+          width="24"
+          height="24"
+        />
+      ),
+      href: 'tel:+917845948395',
+      label: 'Phone',
+    },
+    {
+      icon: (
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png"
+          alt="LeetCode"
+          width="24"
+          height="24"
+        />
+      ),
+      href: 'https://leetcode.com/u/Dharun_25/',
+      label: 'LeetCode',
+    },
   ];
 
   return (
     <section id="home" className="hero-section">
-      {/* Background with gradient like the image */}
+      {/* Background */}
       <div className="hero-background">
         <div className="bg-gradient-1" />
         <div className="bg-gradient-2" />
         <div className="bg-gradient-3" />
       </div>
-      
-      {/* Animated background effect */}
-      <motion.div 
+
+      {/* Mouse Animation */}
+      <motion.div
         className="hero-bg"
         animate={{
           x: mousePosition.x,
@@ -44,7 +100,7 @@ const Hero = () => {
         }}
         transition={{ type: 'spring', stiffness: 100 }}
       />
-      
+
       <div className="container">
         <div className="hero-content">
           <div className="hero-main">
@@ -54,16 +110,16 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              {/* Profile Image */}
+              {/* Profile */}
               <motion.div
                 className="profile-image-container"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.2, duration: 0.6 }}
+                transition={{ delay: 0.2 }}
               >
-                <img 
-                  src="/dharun.jpeg" 
-                  alt="Dharun S - Data Science & Web Developer"
+                <img
+                  src="/dharun.jpeg"
+                  alt="Dharun S"
                   className="profile-image"
                 />
               </motion.div>
@@ -73,12 +129,12 @@ const Hero = () => {
                 className="badge"
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
-                transition={{ delay: 0.3, type: 'spring' }}
+                transition={{ delay: 0.3 }}
               >
                 Data Science & Web Developer Aspirant
               </motion.div>
 
-              {/* Main Heading */}
+              {/* Title */}
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -90,20 +146,20 @@ const Hero = () => {
               {/* Description */}
               <motion.p
                 className="hero-description"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 0.6 }}
               >
-                Passionate Data Science undergraduate skilled in Python, Machine Learning, 
-                and Full-Stack development. Building intelligent solutions that drive 
-                measurable business impact.
+                Passionate Data Science undergraduate skilled in Python,
+                Machine Learning, and Full-Stack development. Building intelligent
+                solutions that drive measurable business impact.
               </motion.p>
 
               {/* Buttons */}
               <motion.div
                 className="hero-buttons"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 0.7 }}
               >
                 <a href="#projects" className="btn btn-primary">
@@ -112,12 +168,12 @@ const Hero = () => {
                 <a href="#contact" className="btn btn-secondary">
                   Contact Me
                 </a>
-                <a 
-                  href="/resume.pdf" 
+                <a
+                  href="/resume.pdf"
                   className="btn btn-resume"
                   download="Dharun_Resume.pdf"
                 >
-                  <FiDownload className="download-icon" />
+                  <FiDownload />
                   Download Resume
                 </a>
               </motion.div>
@@ -125,50 +181,30 @@ const Hero = () => {
               {/* Tech Icons */}
               <motion.div
                 className="tech-icons"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 0.8 }}
               >
-                <motion.div 
-                  className="tech-icon"
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.9 }}
-                  whileHover={{ scale: 1.1, y: -5 }}
-                >
+                <div className="tech-icon">
                   <FaPython style={{ color: '#3776AB', fontSize: '2.5rem' }} />
                   <span>Python</span>
-                </motion.div>
-                
-                <motion.div 
-                  className="tech-icon"
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 1.0 }}
-                  whileHover={{ scale: 1.1, y: -5 }}
-                >
+                </div>
+                <div className="tech-icon">
                   <FaReact style={{ color: '#61DAFB', fontSize: '2.5rem' }} />
                   <span>React</span>
-                </motion.div>
-                
-                <motion.div 
-                  className="tech-icon"
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 1.1 }}
-                  whileHover={{ scale: 1.1, y: -5 }}
-                >
+                </div>
+                <div className="tech-icon">
                   <FaDatabase style={{ color: '#47A248', fontSize: '2.5rem' }} />
                   <span>Database</span>
-                </motion.div>
+                </div>
               </motion.div>
 
-              {/* Social Links */}
+              {/* ✅ Social Icons */}
               <motion.div
                 className="social-links"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 1.2 }}
+                transition={{ delay: 1 }}
               >
                 {socialLinks.map((link, index) => (
                   <motion.a
@@ -177,17 +213,14 @@ const Hero = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="social-icon"
-                    whileHover={{ scale: 1.2, rotate: 5 }}
+                    whileHover={{ scale: 1.2 }}
                     whileTap={{ scale: 0.9 }}
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 1.3 + (index * 0.1) }}
-                    aria-label={link.label}
                   >
                     {link.icon}
                   </motion.a>
                 ))}
               </motion.div>
+
             </motion.div>
           </div>
         </div>
