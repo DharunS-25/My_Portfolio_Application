@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
-import { FiDownload } from 'react-icons/fi';
-import { FaPython, FaReact, FaDatabase } from 'react-icons/fa';
-import '../styles/App.scss';
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { FiDownload } from "react-icons/fi";
+import "../styles/App.scss";
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -15,70 +14,35 @@ const Hero = () => {
       });
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   const socialLinks = [
     {
-      icon: (
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-          alt="GitHub"
-          width="24"
-          height="24"
-        />
-      ),
-      href: 'https://github.com/DharunS-25',
-      label: 'GitHub',
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+      href: "https://github.com/DharunS-25",
+      label: "GitHub",
     },
     {
-      icon: (
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
-          alt="LinkedIn"
-          width="24"
-          height="24"
-        />
-      ),
-      href: 'https://linkedin.com/in/dharunrss10031725',
-      label: 'LinkedIn',
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg",
+      href: "https://linkedin.com/in/dharunrss10031725",
+      label: "LinkedIn",
     },
     {
-      icon: (
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
-          alt="Email"
-          width="24"
-          height="24"
-        />
-      ),
-      href: 'mailto:dharuns2508@gmail.com',
-      label: 'Email',
+      icon: "https://cdn-icons-png.flaticon.com/512/732/732200.png",
+      href: "mailto:dharuns2508@gmail.com",
+      label: "Email",
     },
     {
-      icon: (
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/597/597177.png"
-          alt="Phone"
-          width="24"
-          height="24"
-        />
-      ),
-      href: 'tel:+917845948395',
-      label: 'Phone',
+      icon: "https://cdn-icons-png.flaticon.com/512/597/597177.png",
+      href: "tel:+917845948395",
+      label: "Phone",
     },
     {
-      icon: (
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png"
-          alt="LeetCode"
-          width="24"
-          height="24"
-        />
-      ),
-      href: 'https://leetcode.com/u/Dharun_25/',
-      label: 'LeetCode',
+      icon: "https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png",
+      href: "https://leetcode.com/u/Dharun_25/",
+      label: "LeetCode",
     },
   ];
 
@@ -98,7 +62,7 @@ const Hero = () => {
           x: mousePosition.x,
           y: mousePosition.y,
         }}
-        transition={{ type: 'spring', stiffness: 100 }}
+        transition={{ type: "spring", stiffness: 100 }}
       />
 
       <div className="container">
@@ -178,28 +142,7 @@ const Hero = () => {
                 </a>
               </motion.div>
 
-              {/* Tech Icons */}
-              <motion.div
-                className="tech-icons"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.8 }}
-              >
-                <div className="tech-icon">
-                  <FaPython style={{ color: '#3776AB', fontSize: '2.5rem' }} />
-                  <span>Python</span>
-                </div>
-                <div className="tech-icon">
-                  <FaReact style={{ color: '#61DAFB', fontSize: '2.5rem' }} />
-                  <span>React</span>
-                </div>
-                <div className="tech-icon">
-                  <FaDatabase style={{ color: '#47A248', fontSize: '2.5rem' }} />
-                  <span>Database</span>
-                </div>
-              </motion.div>
-
-              {/* ✅ Social Icons */}
+              {/* Social Icons */}
               <motion.div
                 className="social-links"
                 initial={{ opacity: 0 }}
@@ -216,11 +159,15 @@ const Hero = () => {
                     whileHover={{ scale: 1.2 }}
                     whileTap={{ scale: 0.9 }}
                   >
-                    {link.icon}
+                    <img
+                      src={link.icon}
+                      alt={link.label}
+                      width="24"
+                      height="24"
+                    />
                   </motion.a>
                 ))}
               </motion.div>
-
             </motion.div>
           </div>
         </div>
