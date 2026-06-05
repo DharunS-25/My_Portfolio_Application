@@ -114,9 +114,7 @@ const Hero = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.6 }}
               >
-                Passionate Data Science undergraduate skilled in Python,
-                Machine Learning, and Full-Stack development. Building intelligent
-                solutions that drive measurable business impact.
+              Passionate Data Science undergraduate skilled in Python, Machine Learning, and Full-Stack Development, building intelligent, data-driven solutions that create measurable business value.
               </motion.p>
 
               {/* Buttons */}
