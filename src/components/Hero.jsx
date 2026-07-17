@@ -18,29 +18,30 @@ const Hero = () => {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
+  // Updated to use universally reliable transparent CDN SVGs
   const socialLinks = [
     {
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+      icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg",
       href: "https://github.com/DharunS-25",
       label: "GitHub",
     },
     {
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg",
+      icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg",
       href: "https://linkedin.com/in/dharunrss10031725",
       label: "LinkedIn",
     },
     {
-      icon: "https://cdn-icons-png.flaticon.com/512/732/732200.png",
+      icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg",
       href: "mailto:dharuns2508@gmail.com",
       label: "Email",
     },
     {
-      icon: "https://cdn-icons-png.flaticon.com/512/597/597177.png",
+      icon: "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/phone.svg",
       href: "tel:+917845948395",
       label: "Phone",
     },
     {
-      icon: "https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png",
+      icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/leetcode.svg",
       href: "https://leetcode.com/u/Dharun_25/",
       label: "LeetCode",
     },
@@ -68,105 +69,111 @@ const Hero = () => {
       <div className="container">
         <div className="hero-content">
           <div className="hero-main">
-            <motion.div
-              className="hero-text"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              {/* Profile */}
+            <div className="hero-grid">
+              {/* Left Column - Profile Image */}
               <motion.div
-                className="profile-image-container"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.2 }}
+                className="hero-image-wrapper"
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
               >
-                <img
-                  src="/dharun.jpeg"
-                  alt="Dharun S"
-                  className="profile-image"
-                />
+                <div className="profile-image-container">
+                  <img
+                    src="/dharun.jpeg"
+                    alt="Dharun S"
+                    className="profile-image"
+                  />
+                </div>
               </motion.div>
 
-              {/* Badge */}
+              {/* Right Column - Text Content */}
               <motion.div
-                className="badge"
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 0.3 }}
-              >
-                Data Science & Web Developer Aspirant
-              </motion.div>
-
-              {/* Title */}
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
+                className="hero-text"
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
+                transition={{ duration: 0.8 }}
               >
-                Hi, I'm <span className="gradient-text">Dharun S</span>
-              </motion.h1>
-
-              {/* Description */}
-              <motion.p
-                className="hero-description"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.6 }}
-              >
-              Passionate Data Science undergraduate specializing in Python, Machine Learning, Data Analysis, SQL, and Full-Stack Development. I build AI-powered, scalable, and data-driven applications that solve real-world problems and create measurable business impact.
-              </motion.p>
-
-              {/* Buttons */}
-              <motion.div
-                className="hero-buttons"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.7 }}
-              >
-                <a href="#projects" className="btn btn-primary">
-                  View Projects
-                </a>
-                <a href="#contact" className="btn btn-secondary">
-                  Contact Me
-                </a>
-                <a
-                  href="/resume.pdf"
-                  className="btn btn-resume"
-                  download="Dharun_Resume.pdf"
+                {/* Badge */}
+                <motion.div
+                  className="badge"
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 0.3 }}
                 >
-                  <FiDownload />
-                  Download Resume
-                </a>
-              </motion.div>
+                   Data Science & Web Developer Aspirant
+                </motion.div>
 
-              {/* Social Icons */}
-              <motion.div
-                className="social-links"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1 }}
-              >
-                {socialLinks.map((link, index) => (
-                  <motion.a
-                    key={index}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="social-icon"
-                    whileHover={{ scale: 1.2 }}
-                    whileTap={{ scale: 0.9 }}
+                {/* Title */}
+                <motion.h1
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  Hi, I'm <span className="gradient-text">Dharun S</span>
+                </motion.h1>
+
+                {/* Description */}
+                <motion.p
+                  className="hero-description"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.6 }}
+                >
+                  Passionate Data Science undergraduate specializing in Python, 
+                  Machine Learning, Data Analysis, SQL, and Full-Stack Development. 
+                  I build AI-powered, scalable, and data-driven applications that 
+                  solve real-world problems and create measurable business impact.
+                </motion.p>
+
+                {/* Buttons */}
+                <motion.div
+                  className="hero-buttons"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.7 }}
+                >
+                  <a href="#projects" className="btn btn-primary">
+                    View Projects
+                  </a>
+                  <a href="#contact" className="btn btn-secondary">
+                    Contact Me
+                  </a>
+                  <a
+                    href="/resume.pdf"
+                    className="btn btn-resume"
+                    download="Dharun_Resume.pdf"
                   >
-                    <img
-                      src={link.icon}
-                      alt={link.label}
-                      width="24"
-                      height="24"
-                    />
-                  </motion.a>
-                ))}
+                    <FiDownload />
+                    Download Resume
+                  </a>
+                </motion.div>
+
+                {/* Social Icons */}
+                <motion.div
+                  className="social-links"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 1 }}
+                >
+                  {socialLinks.map((link, index) => (
+                    <motion.a
+                      key={index}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="social-icon"
+                      whileHover={{ scale: 1.2, y: -4 }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      <img
+                        src={link.icon}
+                        alt={link.label}
+                      />
+                    </motion.a>
+                  ))}
+                </motion.div>
               </motion.div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

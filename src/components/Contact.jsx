@@ -163,7 +163,6 @@ const Contact = () => {
       <footer className="footer">
         <div className="container">
           <p>© {new Date().getFullYear()} Dharun S. All rights reserved.</p>
-
         </div>
       </footer>
     </section>
