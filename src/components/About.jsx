@@ -114,7 +114,7 @@ const About = () => {
               Kumaraguru College of Technology, Coimbatore
             </div>
             <div className="education-details">
-              <span className="cgpa">CGPA: 7.95/10</span>
+              <span className="cgpa">CGPA: 8.00/10</span>
               <span className="status">Expected Graduation: 2027</span>
             </div>
           </div>
