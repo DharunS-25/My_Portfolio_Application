@@ -5,7 +5,7 @@ import '../styles/App.scss';
 
 const About = () => {
   const stats = [
-    { icon: <FiBook />, value: '7.95', label: 'CGPA', suffix: '/10' },
+    { icon: <FiBook />, value: '8.00', label: 'CGPA', suffix: '/10' },
     { icon: <FiTarget />, value: '6', label: 'Projects', suffix: 'Completed' },
     { icon: <FiAward />, value: '7', label: 'Certifications', suffix: '' },
   ];
